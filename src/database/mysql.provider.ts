@@ -1,4 +1,5 @@
 import { Injectable, Logger } from '@nestjs/common'
+import { Connection } from 'mysql2/promise'
 import { createPool, Pool } from 'mysql2/promise'
 
 @Injectable()
@@ -17,10 +18,7 @@ export class MySQLProvider {
     })
     this.logger.log('Initialized!')
   }
-  async getValue(): Promise<string> {
-    const conn = await this.pool.getConnection()
-    const [results] = await conn.query('select * from products')
-    console.log(results)
-    return 'Value from MySQL Provider'
+  async getConnection(): Promise<Connection> {
+    return await this.pool.getConnection()
   }
 }
