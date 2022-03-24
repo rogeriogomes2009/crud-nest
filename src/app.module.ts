@@ -5,6 +5,7 @@ import { AppController } from './app.controller'
 import { AppService } from './app.service'
 import { DatabaseModule } from './database/database.module'
 import { ProductModule } from './modules/product/product.module'
+import { CategoryModule } from './modules/categories/category.module'
 
 @Module({
   imports: [
@@ -14,6 +15,7 @@ import { ProductModule } from './modules/product/product.module'
       autoSchemaFile: 'schema.gql',
     }),
     ProductModule,
+    CategoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],
