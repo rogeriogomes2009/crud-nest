@@ -2,9 +2,9 @@ import { ObjectType, Field } from '@nestjs/graphql'
 
 @ObjectType()
 export class Category {
-  @Field()
+  @Field({ nullable: true })
   id: number
 
-  @Field()
+  @Field({ nullable: true })
   category: string
 }

@@ -9,13 +9,14 @@ type Product {
 }
 
 type Category {
-  id: Float!
-  category: String!
+  id: Float
+  category: String
 }
 
 type Query {
   getAllProducts: [Product!]!
   getAllCategories: [Category!]!
+  category(id: String!): Category!
 }
 
 type Mutation {

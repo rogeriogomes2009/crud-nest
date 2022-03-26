@@ -19,6 +19,12 @@ export class CategoryResolver {
     return categoriesToReturn
   }
 
+  @Query((returns) => Category)
+  async category(@Args('id') id: string): Promise<Category> {
+    const category = this.categoryService.findById(id)
+    return category
+  }
+
   @Mutation((returns) => Category, { name: 'createCategory' })
   async create(@Args('input') input: CategoryInput): Promise<Category> {
     return this.categoryService.create(input)
