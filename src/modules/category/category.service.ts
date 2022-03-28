@@ -26,6 +26,7 @@ export class CategoryService {
     const categories = resultsPlain.map((category) => {
       const categoryEntity = new Category()
       categoryEntity.id = category.id
+      categoryEntity.category = category.category
 
       return categoryEntity
     })

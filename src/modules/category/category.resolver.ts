@@ -25,7 +25,6 @@ export class CategoryResolver {
     const categoryToReturn = new Category()
     categoryToReturn.id = category.id
     categoryToReturn.category = category.category
-
     return categoryToReturn
   }
 
